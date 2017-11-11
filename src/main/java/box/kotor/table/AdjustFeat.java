@@ -1,0 +1,153 @@
+package box.kotor.table;
+
+import box.kotor.twoda.TwodaRecord;
+import box.kotor.data.CSVReader;
+import org.apache.commons.csv.CSVRecord;
+
+public enum AdjustFeat implements Feat {
+    ARMOR_1,
+    ARMOR_4,
+    DROID_ARMOR_1,
+    BLASTERS_1,
+    BLASTERS_4,
+    MELEE_1,
+    LIGHTSABERS,
+    BOWCASTERS,
+    AUXILARY_WEAPONS,
+    ENERGY_WEAPONS_1,
+    IMPLANTS_1,
+    STEALTH_FIELDS,
+    ENERGY_SHIELDS_1,
+    STIMULANTS_1,
+    TURRETS_1,
+    MINES_1,
+    PRECISE_SHOT_1,
+    PRECISE_SHOT_2,
+    PRECISE_SHOT_3,
+    PRECISE_SHOT_4,
+    PRECISE_SHOT_5,
+    LIGHTSABER_FOCUS_1,
+    LIGHTSABER_FOCUS_2,
+    LIGHTSABER_FOCUS_3,
+    LIGHTSABER_FOCUS_4,
+    LIGHTSABER_FOCUS_5,
+    MELEE_FOCUS_1,
+    MELEE_FOCUS_2,
+    MELEE_FOCUS_3,
+    MELEE_FOCUS_4,
+    MELEE_FOCUS_5,
+    UNARMED_1,
+    UNARMED_2,
+    UNARMED_3,
+    UNARMED_4,
+    UNARMED_5,
+    FORCE_1,
+    FORCE_2,
+    FORCE_3,
+    POWER_ATTACK_1,
+    POWER_ATTACK_2,
+    POWER_ATTACK_3,
+    FLURRY_1,
+    FLURRY_2,
+    FLURRY_3,
+    CRITICAL_STRIKE_1,
+    CRITICAL_STRIKE_2,
+    CRITICAL_STRIKE_3,
+    POWER_BLAST_1,
+    POWER_BLAST_2,
+    POWER_BLAST_3,
+    RAPID_SHOT_1,
+    RAPID_SHOT_2,
+    RAPID_SHOT_3,
+    SNIPER_SHOT_1,
+    SNIPER_SHOT_2,
+    SNIPER_SHOT_3,
+    FORCE_SENSITIVE,
+    DUELING,
+    TWO_WEAPON_1,
+    TWO_WEAPON_2,
+    TWO_WEAPON_3,
+    DUAL_STRIKE_1,
+    DUAL_STRIKE_2,
+    DUAL_STRIKE_3,
+    CONDITIONING_1,
+    CONDITIONING_2,
+    CONDITIONING_3,
+    DEFLECT_1,
+    DEFLECT_2,
+    DEFLECT_3,
+    FORCE_IMMUNITY_1,
+    FORCE_IMMUNITY_2,
+    FORCE_IMMUNITY_3,
+    FORCE_JUMP_1,
+    FORCE_JUMP_2,
+    FORCE_JUMP_3,
+    SNEAK_ATTACK_1,
+    SNEAK_ATTACK_2,
+    SNEAK_ATTACK_3,
+    SNEAK_ATTACK_4,
+    SNEAK_ATTACK_5,
+    SNEAK_ATTACK_E1,
+    SNEAK_ATTACK_E2,
+    SNEAK_ATTACK_E3,
+    SNEAK_ATTACK_E4,
+    SNEAK_ATTACK_E5,
+    DEFLECT_MASTERY,
+    CLOSE_COMBAT,
+    FORCE_MASTERY,
+    IGNORE_PAIN_1,
+    IGNORE_PAIN_2,
+    IGNORE_PAIN_3,
+    TOUGHNESS_1,
+    TOUGHNESS_2,
+    TOUGHNESS_3,
+    DARK_SIDE_MASTERY,
+    CLASS_SKILL_AWARENESS,
+    CLASS_SKILL_SCIENCE,
+    CLASS_SKILL_DEMOLITIONS,
+    CLASS_SKILL_REPAIR,
+    CLASS_SKILL_SECURITY,
+    CLASS_SKILL_STEALTH,
+    CLASS_SKILL_MEDICINE,
+    LIGHTSABER_FINESSE,
+    MELEE_FINESSE,
+    FORCE_REGENERATE,
+    STEALTH_RUN,
+    KINETIC_COMBAT,
+    MANDALORIAN_COURAGE,
+    PERSONAL_CLOAKING_SHIELD,
+    IMPLANT_SWITCHING,
+    SPIRIT,
+    FORCE_CHAIN,
+    WAR_VETERAN,
+    COMPLEX_UNARMED_ANIMATIONS,
+    ECHANI_STRIKE,
+    SHIELD_BREAKER,
+    REPULSOR_STRIKE,
+    ASSASSIN_PROTOCOL,
+    WOOKIE_RAGE,
+    WOOKIE_TOUGHNESS,
+    MINE_IMMUNITY,
+    POINT_GUARD,
+    ;
+    
+    private static final CSVReader reader = new CSVReader();
+    
+    private final CSVRecord data;
+    private int index;
+    
+    AdjustFeat() {
+        data = CSVReader.recordFor(this, CSVReader.OLDFEATS);
+        index = Integer.parseInt(data.get(1));
+    }
+    
+    @Override
+    public int getIndex() {
+        return index;
+    }
+    
+    public void adjustRecord(TwodaRecord record) {
+        reader.setRecord(data);
+        Feat.adjustRecord(record, reader);
+    }
+}

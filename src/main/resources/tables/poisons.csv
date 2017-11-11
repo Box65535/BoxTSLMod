@@ -1,0 +1,12 @@
+"label"	"dc_save"	"duration"	"period"	"dam_hp"	"dam_fp"	"dam_str"	"dam_dex"	"dam_con"	"dam_int"	"dam_wis"	"dam_chr"	"name"	"abil_dur"
+"POISON_EDGE_1"	10	30	10	0	0	4	4	0	0	0	0	"****"	30
+"POISON_EDGE_2"	14	30	10	0	0	4	4	0	0	0	0	"****"	30
+"POISON_EDGE_3"	18	30	10	0	0	4	4	0	0	0	0	"****"	30
+"POISON_TWILEK"	20	30	10	0	0	4	4	0	0	0	0	"****"	30
+"POISON_RODIAN"	20	30	10	0	0	4	4	0	0	0	0	"****"	30
+"POISON_SITH_SWORD_1"	10	30	10	0	0	4	4	0	0	0	0	"****"	30
+"POISON_MINE_1"	16	60	5	2	0	0	0	0	0	0	0	"****"	"****"
+"POISON_MINE_2"	18	60	5	3	0	0	0	0	0	0	0	"****"	"****"
+"POISON_MINE_3"	20	60	5	4	0	0	0	0	0	0	0	"****"	"****"
+"POISON_MINE_4"	22	60	5	5	0	0	0	0	0	0	0	"****"	"****"
+"POISON_MINE_5"	24	60	5	6	0	0	0	0	0	0	0	"****"	"****"
