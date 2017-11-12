@@ -34,15 +34,16 @@ public interface Spell {
             record.set("prerequisites", prereq1.toString() + "_" + prereq2.toString());
         
         record.set("masterspell", reader.readString());
-        record.set("guardian", reader.readInt());
-        record.set("consular", reader.readInt());
-        record.set("sentinel", reader.readInt());
-        record.set("weapmstr", reader.readInt());
-        record.set("jedimaster", reader.readInt());
-        record.set("watchman", reader.readInt());
-        record.set("sithlord", reader.readInt());
-        record.set("assassin", reader.readInt());
-        record.set("inate", reader.readInt());
+        int levelreq = reader.readInt();
+        record.set("guardian", levelreq);
+        record.set("consular", levelreq);
+        record.set("sentinel", levelreq);
+        record.set("weapmstr", levelreq);
+        record.set("jedimaster", levelreq);
+        record.set("watchman", levelreq);
+        record.set("sithlord", levelreq);
+        record.set("assassin", levelreq);
+        record.set("inate", levelreq);
         record.set("maxcr", reader.readInt());
         record.set("category", reader.readHexInt());
         record.set("range", reader.readString());
@@ -114,6 +115,7 @@ public interface Spell {
             "assassin",
             "inate",
             "maxcr",
+            "category",
             "range",
             "iconresref",
             "impactscript",
